@@ -80,7 +80,5 @@ $dog = new Dog();
 
 echo $dog->getName();
 // echo co thay doi
-
-echo "hello";
-
 echo 'thay doi 444';
+echo "hello";

@@ -92,12 +92,12 @@
 // 5. ++, --- toan tu tang giam
 // 6. toan tu dieu kien
 $x = 4;
-// if($x > 5) {
-//     echo 'x > 5';
-// } else {
-//     echo 'x < 5';
-// }
-// echo $x > 5 ? 'x > 5' : 'x < 5';
+if($x > 5) {
+    echo 'x > 5';
+} else {
+    echo 'x < 5';
+}
+echo $x > 5 ? 'x > 5' : 'x < 5';
 
 // coalesce
 
@@ -153,8 +153,8 @@ foreach($arr as $key => $value){
 
 // array_merge, array_pop, array_push, key, array_reverse, array_rand, md_rand
 
-// echo "<br>";
+echo "<br>";
 
-// // $arr2 = [3, 9];
+// $arr2 = [3, 9];
 
-// echo mt_rand(1, 9);
+echo mt_rand(1, 9);
