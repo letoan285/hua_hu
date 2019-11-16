@@ -79,3 +79,6 @@ class Dog extends Animal {
 $dog = new Dog();
 
 echo $dog->getName();
+// echo co thay doi
+
+echo "hello";
