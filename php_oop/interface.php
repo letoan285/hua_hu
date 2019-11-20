@@ -1,3 +1,4 @@
+//asdad
 <?php
 interface DogInterface {
     function getName();
