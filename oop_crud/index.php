@@ -1,12 +1,12 @@
 <?php 
 require_once 'Product.php';
 require_once 'User.php';
-$model = new User();
-// var_dump($product->all());die;
 
-$rs = $model->all();
-
-var_dump($rs);die;
+$products = Product::all();
+// var_dump($products);die;
+// $id = $_GET['id'];
+// $model = Product::where(['id', '>', 5])->orwhere(['id', 4])->get();
+// var_dump($model->find(4));die;
 
 ?>
 
@@ -28,17 +28,18 @@ include_once "partials/header.php";
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($products as $key => $products): ?>
+                        <?php foreach ($products as $key=>$product): ?>
                             <tr>
                                 <td><?= $key + 1?></td>
-                                <td><a href=""><img width="80" src="<?= $products['image'] ?>" alt=""></a> </td>
-                                <td><?= $products['name'] ?></td>
-                                <td><?= $products['sell_price'] ?></td>
+                                <td><a href=""><img width="80" src="<?= $product->image ?>" alt=""></a> </td>
+                                <td><?= $product->name ?></td>
+                                <td><?= $product->sell_price ?></td>
                                 <td>
-                                    <a class="btn btn-sm btn-info" href="detail.php?id=<?= $products['id'] ?>">View</a>
-                                    <a class="btn btn-sm btn-warning" href="edit.php?id=<?= $products['id'] ?>">Edit</a>
-                                    <a class="btn btn-sm btn-danger" href="delete.php?id=<?= $products['id'] ?>">Delete</a>
+                                    <a class="btn btn-sm btn-info" href="edit.php?id=<?= $product->id ?>">Edit</a>
+                                    <a class="btn btn-sm btn-primary" href="detail.php?id=<?= $product->id ?>">View</a>
+                                    <a class="btn btn-sm btn-danger" href="delete.php?id=<?= $product->id ?>">Delete</a>
                                 </td>
+                                
                             </tr>
                         <?php endforeach ?>
                     </tbody>
