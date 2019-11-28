@@ -83,6 +83,7 @@ INSERT INTO categories(name, slug, parent_id, status)
 -- u: update 
 -- d: delete/destroy
 
+alter table products add stock int;
 
 select name, slug, sell_price from products where id > 3;
 update products set stock = 20 where id in(1,3,5);
