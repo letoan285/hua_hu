@@ -1,9 +1,7 @@
 <?php 
 require_once "Product.php";
 require_once "Category.php";
-$id = $_GET['id'];
 
-$product = Product::find($id);
 
 $categories = Category::all();
 // var_dump($categories);die;
@@ -20,35 +18,35 @@ include_once "partials/header.php";
         <div class="row">
             <div class="col-12">
             <h3 class="text-center">Create new Product</h3>
-                <form action="update_product.php" method="POST">
-                    <input type="hidden" name="id" value="<?=$product->id?>">
+                <form action="store_product.php" method="POST">
+                    
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input name="name" type="text" value="<?=$product->name?>" class="form-control" placeholder="Name..">
+                        <input name="name" type="text"  class="form-control" placeholder="Name..">
                     </div>
 
                     <div class="form-group">
                         <label for="">Slug</label>
-                        <input name="slug" type="text" value="<?=$product->slug?>" class="form-control" placeholder="Slug..">
+                        <input name="slug" type="text"  class="form-control" placeholder="Slug..">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="description" class="form-control" cols="30" rows="10"> <?=$product->description?> </textarea>
+                        <textarea name="description" class="form-control" cols="30" rows="10"> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Short Description</label>
-                        <textarea name="short_description" class="form-control" cols="30" rows="10"> <?=$product->short_description?></textarea>
+                        <textarea name="short_description" class="form-control" cols="30" rows="10"> </textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Sell Price</label>
-                        <input name="sell_price" type="text" value="<?=$product->sell_price?>" class="form-control" placeholder="Sell Price..">
+                        <input name="sell_price" type="text"  class="form-control" placeholder="Sell Price..">
                     </div>
 
                     <div class="form-group">
                         <label for="">List Price</label>
-                        <input name="list_price" type="text" value="<?=$product->list_price?>" class="form-control" placeholder="List Price..">
+                        <input name="list_price" type="text"  class="form-control" placeholder="List Price..">
                     </div>
 
                     <div class="form-group">
@@ -57,10 +55,7 @@ include_once "partials/header.php";
                             <?php foreach ($categories as $key => $category): ?>
                                 <option 
                                 <?php 
-                                if($category->id == $product->category_id){
-                                    echo 'selected';
-                                }
-
+                                
                                 ?>
                                 value="<?=$category->id?>"> <?=$category->name?></option>
                             	
@@ -70,22 +65,21 @@ include_once "partials/header.php";
 
                     <div class="form-group">
                         <label for="">Image</label>
-                        <input name="image" value="<?=$product->image?>" type="text" class="form-control" placeholder="Image..">
+                        <input name="image"  type="text" class="form-control" placeholder="Image..">
                     </div>
 
                     <div class="form-group">
                         <label for="">Supplier ID</label>
-                        <input name="supplier_id" type="text"  value="<?=$product->supplier_id?>" class="form-control" placeholder="Supplier ID..">
+                        <input name="supplier_id" type="text"  class="form-control" placeholder="Supplier ID..">
                     </div>
-
                     <div class="form-group">
                         <label for="">Status</label>
-                        <input name="status" type="text" value="<?=$product->status?>" class="form-control" placeholder="Supplier ID..">
+                        <input name="status" type="number"  class="form-control" placeholder="Status">
                     </div>
 
                     <div class="form-group">
                         <label for="">Stock</label>
-                        <input name="stock" type="text" value="<?=$product->stock?>" class="form-control" placeholder="Supplier ID..">
+                        <input name="stock" type="text"  class="form-control" placeholder="Supplier ID..">
                     </div>
 
                     <div class="form-group">

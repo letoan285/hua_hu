@@ -1,5 +1,5 @@
 <?php
-require_once 'BaseModel.php';
+require_once 'models/BaseModel.php';
 class Product extends BaseModel {
     protected $table = 'products';
     protected $columns = [
