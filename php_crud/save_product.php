@@ -18,7 +18,7 @@ $supplier_id = $_POST["supplier_id"];
 
 // 3. viet sql
 // $sql = "INSERT INTO products(name, slug, description, short_description, list_price, sell_price, image, category_id, stock, supplier_id) VALUES($name, $slug, $description, $short_description, $list_price, $sell_price, $image, $category_id, $stock, $supplier_id)";
-$sql = "insert into products(name, sell_price, list_price, slug, image, category_id, description, short_description, supplier_id) values('$name', $sell_price, $list_price, '$slug', '$image', $category_id, '$description', '$short_description', $supplier_id)";
+$sql = "insert into products(name, sell_price, list_price, slug, image, category_id, description, short_description, supplier_id, stock) values('$name', $sell_price, $list_price, '$slug', '$image', $category_id, '$description', '$short_description', $supplier_id, $stock)";
 $stmt = $conn->prepare($sql);
 
 
