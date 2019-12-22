@@ -1,4 +1,6 @@
 <?php
+// namespace App\Model;
+
 class BaseModel {
     protected $host = '127.0.0.1';
     protected $userName = 'root';

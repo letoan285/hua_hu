@@ -1,5 +1,7 @@
 <?php
-require_once 'app/models/BaseModel.php';
+require_once "app/models/BaseModel.php";
+// namespace App\Model;
+
 class Product extends BaseModel {
     protected $table = 'products';
     protected $columns = [

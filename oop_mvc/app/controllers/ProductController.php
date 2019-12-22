@@ -1,12 +1,19 @@
 <?php 
 require_once "app/models/Product.php";
+// namespace App\Controller;
+
+// use App\Model\Product;
 
 class ProductController {
 
     public $model;
     public $base_path = 'http://www.localhost/hvcg/2019/Hua_Huu/oop_mvc/';
 
+
     public function __construct(){
+        if(!$_SESSION['auth']){
+            header("location: $this->base_path"."login");
+        }
         $this->model = Product::all();
     }
 

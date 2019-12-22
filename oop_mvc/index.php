@@ -1,9 +1,17 @@
-<?php 
+<?php
+// require_once "vendor/autoload.php";
+// require_once "utils/index.php";
+
+// use App\Controller\HomeController;
+// use App\Controller\UserController;
+// use App\Controller\ProductController;
 require_once "app/controllers/HomeController.php";
 require_once "app/controllers/ProductController.php";
 require_once "app/controllers/UserController.php";
 
-$url = $_GET['url'] ?? '/';
+
+$url = isset($_GET['url']) ? $_GET['url'] : '/';
+
 
 
 
@@ -26,7 +34,10 @@ switch($url){
                 break;
             }
 
-
+    case 'logout': 
+        $ctl = new UserController();
+        $ctl->logout();
+        break;
     case 'register':
         $method = $_SERVER['REQUEST_METHOD'];
         $ctl = new UserController();

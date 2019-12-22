@@ -1,20 +1,30 @@
 <?php 
+// namespace App\Controller;
 require_once "app/models/User.php";
-
+session_start();
 class UserController {
 
     public $model;
     public $base_path = 'http://www.localhost/hvcg/2019/Hua_Huu/oop_mvc/';
 
     public function __construct(){
-        // $this->model = Product::all();
+        // if(!$_SESSION['auth']){
+        //     // header("location: $this->base_path"."login");
+        // }
+    }
+    public function logout(){
+        unset($_SESSION['auth']);
+
+        header("location: $this->base_path"."login");
     }
     public function getLogin(){
+        // var_dump('login');die;
         include_once "app/views/auth/login.php";
     }
     public function postLogin(){
         $email = $_POST['email'];
         $password = $_POST['password'];
+
 
         $rs = User::where(['email', "$email"])->get();
 
@@ -23,6 +33,10 @@ class UserController {
         } else {
 
             if(password_verify($password, $rs[0]->password)){
+                
+                $_SESSION['auth']['email'] = $rs[0]->email;
+                $_SESSION['auth']['password'] = $rs[0]->password;
+                // var_dump($_SESSION['auth']);die;
                 header("location: $this->base_path"."admin");
             } else {
                 header("location: $this->base_path"."login");

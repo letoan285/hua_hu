@@ -209,13 +209,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link">
+                <a href="<?=$path?>admin/products" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./products/create" class="nav-link">
+                <a href="<?=$path; ?>admin/products/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New</p>
                 </a>
